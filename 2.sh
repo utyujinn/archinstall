@@ -8,7 +8,6 @@ blender
 obs-studio
 gimp
 evince
-alacritty
 kdeconnect
 firewalld
 fcitx5-im
