@@ -8,12 +8,12 @@ blender
 obs-studio
 gimp
 evince
-alacritty
 kdeconnect
 firewalld
 fcitx5-im
 fcitx5-mozc
 fcitx5-fonfigtool
+udisks2
 ' 
 sudo systemctl enable firewalld
 
