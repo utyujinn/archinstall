@@ -1,8 +1,10 @@
-after chroot,
+after partitioning,
 ```
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/1.sh > 1.sh
+curl https://raw.githubusercontent.com/utyujinn/archinstall/master/core.sh > core.sh
 ```
+
 ```
+sh core.sh
 sh 1.sh
 ```
 
