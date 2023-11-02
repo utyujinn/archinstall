@@ -34,6 +34,16 @@ systemctl enable NetworkManager
 #terminal
 pacman -Sy alacritty
 
+#autologin
+
+sudo mkdir /etc/systemd/system/getty@tty1.service.d```
+sudo vim /etc/systemd/system/getty@tty1.service.d```
+echo "
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin utyujin --noclear %I $TERM
+" > /etc/systemd/system/getty@tty1.service.d
+
 #preparation
 curl https://raw.githubusercontent.com/utyujinn/archinstall/master/2.sh > /home/utyujin/2.sh
 curl https://raw.githubusercontent.com/utyujinn/archinstall/master/3.sh > /home/utyujin/3.sh

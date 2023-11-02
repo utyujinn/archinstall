@@ -12,6 +12,22 @@ sudo locale-gen
 #suspend
 sudo sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/' /etc/systemd/logind.conf
 
+#sound
+sudo pacman -Sy alsamixer
+sudo echo "
+pcm.!default {
+    type hw
+    card 1
+    device 0
+}
+
+ctl.!default {
+    type hw           
+    card 1
+    device 0
+}" > /etc/asound.conf
+sudo sed "s/audio:x:996:/audio:x:996:utyujin" /etc/group
+
 # yay
 sudo pacman -S git fakeroot binutils make gcc
 git clone https://aur.archlinux.org/yay.git

@@ -70,3 +70,14 @@ s2idle and deep
 
 # audio
 ```sudo pacman -S alsa-utils```
+
+# autologin 
+
+```sudo mkdir /etc/systemd/system/getty@tty1.service.d```
+```sudo vim /etc/systemd/system/getty@tty1.service.d```
+and write below code
+```
+[Service]
+ExecStart=
+ExecStart=-/usr/bin/agetty --autologin username --noclear %I $TERM
+```
