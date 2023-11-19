@@ -1,4 +1,6 @@
 #!bin/sh
+pacman-key --init
+pacman-key --populate archlinux
 pacstrap -K /mnt base linux linux-firmware
 pacstrap /mnt xf86-video-amdgpu amd-ucode
 
@@ -12,7 +14,7 @@ options root=UUID=xxxx rw
 " > /boot/loader/entries/arch2.conf
 
 #preparation
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/chroot.sh > /chroot.sh
+curl https://raw.githubusercontent.com/utyujinn/archinstall/master/chroot.sh > /root/chroot.sh
 curl https://raw.githubusercontent.com/utyujinn/archinstall/master/1.sh > /mnt/1.sh
 
 echo "
