@@ -13,7 +13,7 @@ options root=UUID=xxxx rw
 
 #preparation
 curl https://raw.githubusercontent.com/utyujinn/archinstall/master/chroot.sh > /chroot.sh
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/2.sh > /mnt/1.sh
+curl https://raw.githubusercontent.com/utyujinn/archinstall/master/1.sh > /mnt/1.sh
 
 echo "
 please do below command and edit entry file.
