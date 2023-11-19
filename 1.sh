@@ -28,8 +28,8 @@ EndSection' > /etc/X11/xorg.conf.d/30-touchpad.conf
 pacman -Sy sudo
 
 #network
-pacman -Sy networkmanager network-manager-applet
-systemctl enable NetworkManager
+pacman -Sy dhcpcd
+systemctl enable dhcpcd
 
 #terminal
 pacman -Sy alacritty
