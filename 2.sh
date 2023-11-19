@@ -6,11 +6,11 @@ sudo systemctl enable firewalld
 
 #locale
 sudo timedatectl set-timezone Japan
-sudo sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8' /etc/locale.gen
+sudo sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8/g' /etc/locale.gen
 sudo locale-gen
 
 #suspend
-sudo sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/' /etc/systemd/logind.conf
+sudo sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/g' /etc/systemd/logind.conf
 
 #sound
 sudo pacman -Sy alsamixer
@@ -26,7 +26,7 @@ ctl.!default {
     card 1
     device 0
 }" > /etc/asound.conf
-sudo sed "s/audio:x:996:/audio:x:996:utyujin" /etc/group
+sudo sed "s/audio:x:996:/audio:x:996:utyujin/g" /etc/group
 
 # yay
 sudo pacman -S git fakeroot binutils make gcc
