@@ -1,6 +1,10 @@
 after partitioning,
 ```
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/core.sh > core.sh
+curl https://raw.githubusercontent.com/utyujinn/archinstall/master/get.sh > get.sh
+```
+
+```
+sh get.sh
 ```
 
 ```

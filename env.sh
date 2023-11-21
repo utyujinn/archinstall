@@ -1,0 +1,2 @@
+EFIPART="nvme0n1p1"
+ROOTPART="nvme0n1p5"
