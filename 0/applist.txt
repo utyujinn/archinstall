@@ -1,0 +1,16 @@
+vivaldi
+code
+xournalpp
+libreoffice
+blender
+obs-studio
+gimp
+evince
+kdeconnect
+fcitx5-im
+fcitx5-mozc
+fcitx5-configtool
+udisks2
+vlc
+flameshot
+onboard
