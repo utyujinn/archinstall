@@ -2,8 +2,8 @@
 
 #desktop environment
 pacman -Sy xorg-server xorg-xinit
-pacman -Sy lxde-common lxde-session openbox
-echo 'exec startlxde' > /home/utyujin/.xinitrc
+pacman -Sy i3
+echo 'exec i3' > /home/utyujin/.xinitrc
 
 # touchpad setting
 echo 'Section "InputClass" 

@@ -1,6 +1,6 @@
 #!/bin/bash
 # vim
-pacman -Sy vim vi
+pacman -Sy vim vi git
 
 # sudo
 pacman -Sy sudo

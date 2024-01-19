@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #locale
-sudo timedatectl set-timezone Japan
-sudo sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8/g' /etc/locale.gen
-sudo locale-gen
+timedatectl set-timezone Japan
+sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8/g' /etc/locale.gen
+locale-gen
 
 #suspend
-sudo sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/g' /etc/systemd/logind.conf
+sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/g' /etc/systemd/logind.conf
 
 # network
 pacman -Sy dhcpcd
@@ -16,18 +16,21 @@ systemctl enable dhcpcd
 pacman -Sy alacritty
 
 # autologin
-sudo mkdir /etc/systemd/system/getty@tty1.service.d```
-sudo vim /etc/systemd/system/getty@tty1.service.d```
+sudo mkdir /etc/systemd/system/getty@tty1.service.d
 echo "
 [Service]
 ExecStart=
 ExecStart=-/usr/bin/agetty --autologin utyujin --noclear %I $TERM
 " > /etc/systemd/system/getty@tty1.service.d
 
-# mount
-echo "/dev/nvme0n1p2 /run/media/utyujin/data ntfs-3g uid=utyujin,gid=wheel,umask=0022 0 2" | sudo tee -a /mnt/data
+# font
+pacman -Sy unzip
+curl https://dforest.watch.impress.co.jp/library/s/setofont/11015/setofont_v_6_20.zip > /setofont.zip
+unzip setofont.zip
+mkdir /usr/share/local/fonts
+mv setofont/setofont* /usr/share/local/fonts
+fc-cache
 
-# preparation
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/2.sh > /home/utyujin/2.sh
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/3.sh > /home/utyujin/3.sh
-curl https://raw.githubusercontent.com/utyujinn/archinstall/master/4.sh > /home/utyujin/4.sh
+# dotfiles
+git clone https://github.com/utyujinn/dotfiles
+sh dotfiles/sh/install.sh
