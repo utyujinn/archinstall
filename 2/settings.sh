@@ -6,7 +6,7 @@ sed -i 's/#ja_JP.UTF-8/ja_JP.UTF-8/g' /etc/locale.gen
 locale-gen
 
 #suspend
-sed -i 's/#HandlePowerKey=shutdown/HandlePowerKey=suspend/g' /etc/systemd/logind.conf
+sed -i 's/#HandlePowerKey=poweroff/HandlePowerKey=suspend/g' /etc/systemd/logind.conf
 
 # network
 pacman -Sy dhcpcd
